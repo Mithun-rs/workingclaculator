@@ -1,0 +1,100 @@
+<html>
+    <head>
+        <title>calculator</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div id="calc">
+        <input id="display" readonly>
+        <div id="button">
+            <button onclick="clearDisplay()">C</button>
+            <button class="opp" >&lArr;</button>
+            <button class="opp">%</button>
+            <button onclick="appendToDisplay('/')" class="opp">&divide;</button>
+            <button onclick="appendToDisplay('7')">7</button>
+            <button onclick="appendToDisplay('8')" >8</button>
+            <button onclick="appendToDisplay('9')">9</button>
+            <button onclick="appendToDisplay('*')"class="opp">*</button>
+            <button onclick="appendToDisplay('4')">4</button>
+            <button onclick="appendToDisplay('5')">5</button>
+            <button onclick="appendToDisplay('6')">6</button>
+            <button onclick="appendToDisplay('-')" class="opp">-</button>
+            <button onclick="appendToDisplay('1')">1</button>
+            <button onclick="appendToDisplay('2')">2</button>
+            <button onclick="appendToDisplay('3')">3</button>
+            <button onclick="appendToDisplay('+')"class="opp">+</button>
+            <button onclick="appendToDisplay('00')">00</button>
+            <button onclick="appendToDisplay('0')" >0</button>
+            <button onclick="appendToDisplay('.')" >.</button>
+            <button onclick="calculate()" class="equ">=</button>
+        </div>
+        </div>
+    </body>
+    <script>
+          var display= document.getElementById("display")
+          function appendToDisplay(input)
+          {
+             display.value +=input
+          }
+          function clearDisplay()
+          {
+           display.value=""
+             }
+          function calculate()
+          {
+           display.value=eval(display.value)
+          }
+    </script>
+
+    <style>
+        body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url(photo-1472289065668-ce650ac443d2.jpg);
+}
+
+#display{
+    width: 100%;
+   border: 2px solid #0b0b0b;
+   padding:15px;
+   margin-bottom:10px;
+   border-radius: 10px;
+   text-align: right;
+   background-color: #fff;
+   font-size: 25px;
+}
+
+#button {
+   display: grid;
+   grid-template-columns: repeat(4,1fr);
+   gap: 10px;
+   border-radius: 25px;
+   
+}
+
+#calc{
+   border: 3px solid #0a0a0a;
+   padding:20px;
+   border-radius: 20px;
+   background-color: rgb(8, 8, 8);
+}
+
+#button button{
+   height: 45px;
+   width: 50px;
+   border-radius: 10px;
+   border-color: #fff;
+   font-size: large;
+}
+.opp
+{
+    color: chocolate;
+}
+.equ
+{
+    background-color: chocolate;
+}
+
+    </style>
+</html>
